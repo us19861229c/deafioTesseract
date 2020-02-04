@@ -5,22 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Desafio Tesseract</title>
-    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
     <header>
-        <h1>Grupo Tesseract</h1>
-        <hr>
+        <div class="container-fluid ">
+            <h1 class="text-white bg-primary d-flex p-5 justify-content-center ">Grupo Tesseract</h1>
+        </div>
     </header>
     <main>
-        <div>
-            <form > <!--Aqui o filtro de seleção através do login-->
-                <select name="devs" id="selecDev">
-                    <option value="">Mostrar todos</option>
-                </select>
-                <button type="button" onclick="selecionarUsuario()">Selecionar</button> <!-- botão de envio da solictação-->
+        <div class="input-group justify-content-center">
+            <form class="text-center"> <!--Aqui o filtro de seleção através do login-->
+                <div class="input-group mb-5">
+                    <select name="devs" id="selecDevs" class="custom-select form-control" aria-describedby="button-addon2">
+                        <option value="">Mostrar todos usuários</option>
+                    </select>
+                    <div class="input-group-append">
+                        <button type="button" class="btn btn-outline-primary" id="button-addon2" onclick="selecionarUsuario()">Selecionar</button> <!-- botão de envio da solictação-->
+                    </div>
+                </div>
             </form>
-            <ul id="usuario-lista"></ul> <!-- Aqui os cards com avatar e infos dos usuários.-->
+        </div>
+        <div>
+            <ul id="usuario-lista" class="list-unstyled text-center"></ul> <!-- Aqui os cards com avatar e infos dos usuários.-->
         </div>
     </main>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
