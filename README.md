@@ -4,7 +4,7 @@
 Este desafio consiste em uma listagem dos membros do tesseract e exibição de detalhes sobre a pessoa selecionada.
 Você deve criar uma página que tenha os seguintes requisitos:
 - [x]  Lista com os atuais membros no github, com login e foto
-- [ ] Campo de filtro para filtrar os membros (por login)
+- [x] Campo de filtro para filtrar os membros (por login)
 - [ ] Ao clicar em um membro, exibir informações daquela pessoa:
  1. Nome
  2. Quantidade de repositórios
