@@ -14,6 +14,12 @@
     </header>
     <main>
         <div>
+            <form > <!--Aqui o filtro de seleção através do login-->
+                <select name="devs" id="selecDev">
+                    <option value="">Mostrar todos</option>
+                </select>
+                <button type="button" onclick="selecionarUsuario()">Selecionar</button> <!-- botão de envio da solictação-->
+            </form>
             <ul id="usuario-lista"></ul> <!-- Aqui os cards com avatar e infos dos usuários.-->
         </div>
     </main>
