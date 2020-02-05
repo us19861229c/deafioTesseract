@@ -16,14 +16,25 @@ async function renderUsuario(usuario) {
     const tdInfo = await axios.get(`https://api.github.com/users/${usuario}`)
     let elementoLista = document.getElementById("usuario-lista")
     let elementoItem = document.createElement("li")
-    elementoItem.className ="card m-2 col d-inline-flex border-primary justify-content-around"
-    elementoItem.style = "width: 18rem"
-    elementoItem.innerHTML = `<img src="${tdInfo.data.avatar_url}" class="img-fluid pt-2" height="50">
-                              <h5 class="card-title card-header bg-primary text-white text-center ">${tdInfo.data.name[0]}<span style="font-size:1rem">${tdInfo.data.name.slice(1,)}</span></h5>
-                              <span class="card-text  bg-light"><strong>Repositórios:</strong> ${tdInfo.data.public_repos}</span><br>
-                              <span class="card-text "><strong>Seguidores:</strong> ${tdInfo.data.followers}</span><br>
-                              <span class="card-text  bg-light"><strong>Desde:</strong> ${tdInfo.data.created_at.slice(0,10).split("-").reverse().join("/")}</span><br>
-                              <a href="${tdInfo.data.html_url}" class="mb-1" target="_blank">Conheça mais!</a>`
+    elementoItem.className ="m-3 col d-inline-flex justify-content-around"
+    elementoItem.style="width: 18rem"
+    elementoItem.innerHTML = ` <div class="cartao">
+                                    <div class="face face1">
+                                        <div class="content">
+                                            <img src="${tdInfo.data.avatar_url}" alt="">
+                                            <h3><span id="nomeMembro">${tdInfo.data.login}<span></h3>        
+                                        </div>
+                                    </div>
+                                    <div class="face face2">
+                                        <div class="content">
+                                            <h5><strong>${tdInfo.data.name}</strong></h5>
+                                            <p><strong>Seguidores:</strong> ${tdInfo.data.followers}<br>
+                                               <strong>Repositórios públicos:</strong> ${tdInfo.data.public_repos}<br>
+                                               <strong>Desde:</strong> ${tdInfo.data.created_at.slice(0,10).split("-").reverse().join("/")}<br>
+                                            </p>
+                                            <a href="${tdInfo.data.html_url}" target="_blank">Conheça mais!</a>
+                                        </div>
+                                    </div>`                            
     elementoLista.appendChild(elementoItem)
     let seletorDevs = document.getElementById("selecDevs")
     let seletorPadrao = document.createElement("option")
@@ -43,13 +54,24 @@ async function selecionarUsuario() {
     }
     const tdInfo = await axios.get(`https://api.github.com/users/${selecionado}`)
     let elementoItem = document.createElement("li")
-    elementoItem.className ="card m-2 col d-inline-flex border-primary justify-content-around"
-    elementoItem.style = "width: 18rem"
-    elementoItem.innerHTML = `<img src="${tdInfo.data.avatar_url}" class="img-fluid pt-2" height="50">
-                              <h5 class="card-title card-header bg-primary text-white text-center ">${tdInfo.data.name[0]}<span style="font-size:1rem">${tdInfo.data.name.slice(1,)}</span></h5>
-                              <span class="card-text  bg-light"><strong>Repositórios:</strong> ${tdInfo.data.public_repos}</span><br>
-                              <span class="card-text "><strong>Seguidores:</strong> ${tdInfo.data.followers}</span><br>
-                              <span class="card-text  bg-light"><strong>Desde:</strong> ${tdInfo.data.created_at.slice(0,10).split("-").reverse().join("/")}</span><br>
-                              <a href="${tdInfo.data.html_url}" class="mb-1" target="_blank">Conheça mais!</a>`
+    elementoItem.className ="m-3 col d-inline-flex justify-content-around"
+    elementoItem.style="width: 18rem"
+    elementoItem.innerHTML = ` <div class="cartao">
+                                    <div class="face face1">
+                                        <div class="content">
+                                            <img src="${tdInfo.data.avatar_url}" alt="">
+                                            <h3><span id="nomeMembro">${tdInfo.data.login}<span></h3>        
+                                        </div>
+                                    </div>
+                                    <div class="face face2">
+                                        <div class="content">
+                                            <h5><strong>${tdInfo.data.name}</strong></h5>
+                                            <p><strong>Seguidores:</strong> ${tdInfo.data.followers}<br>
+                                               <strong>Repositórios públicos:</strong> ${tdInfo.data.public_repos}<br>
+                                               <strong>Desde:</strong> ${tdInfo.data.created_at.slice(0,10).split("-").reverse().join("/")}<br>
+                                            </p>
+                                            <a href="${tdInfo.data.html_url}" target="_blank">Conheça mais!</a>
+                                        </div>
+                                    </div>`                            
     elementoLista.appendChild(elementoItem)
 }

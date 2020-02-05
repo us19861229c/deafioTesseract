@@ -1,36 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-Br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Desafio Tesseract</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="cardffect.css">
 </head>
 <body>
-    <header>
-        <div class="container-fluid ">
-            <h1 class="text-white bg-primary d-flex p-5 justify-content-center ">Grupo Tesseract</h1>
+    <header> 
+        <div class="container">
+            <div class="row">
+                <div class="col ">
+                     <h1 class="bg-primary text-white text-center p-4">Grupo Tesseract</h1>
+                </div>
+            </div>
         </div>
     </header>
     <main>
-        <div class="input-group justify-content-center">
-            <form class="text-center"> <!--Aqui o filtro de seleção através do login-->
-                <div class="input-group mb-5">
-                    <select name="devs" id="selecDevs" class="custom-select form-control" aria-describedby="button-addon2">
-                        <option value="">Mostrar todos usuários</option>
-                    </select>
-                    <div class="input-group-append">
-                        <button type="button" class="btn btn-outline-primary" id="button-addon2" onclick="selecionarUsuario()">Selecionar</button> <!-- botão de envio da solictação-->
-                    </div>
+        <div class="container">
+            <div class="row">
+                <div class="col ">
+                    <form class="text-center">
+                        <div class="input-group mb-3">
+                            <select name="devs" class="form-control" id="selecDevs" aria-describedby="button-addon2">
+                            <option value="" selected>Mostrar todos</option>
+                            </select>
+                            <div class="input-group-append">
+                                <button type="button" class="btn btn-outline-primary" id="button-addon2" onclick="selecionarUsuario()">Selecionar</button>
+                            </div>
+                        </div>
+                    </form>
+                    <ul id="usuario-lista" class="list-unstyled text-center"></ul>
                 </div>
-            </form>
-        </div>
-        <div>
-            <ul id="usuario-lista" class="list-unstyled text-center"></ul> <!-- Aqui os cards com avatar e infos dos usuários.-->
-        </div>
+            </div>
+        </div> 
     </main>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script src="main.js"></script>
+ <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+ <script src="main.js"></script>   
 </body>
 </html>
